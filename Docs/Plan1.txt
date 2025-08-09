@@ -1,0 +1,219 @@
+staged project plan with:
+
+Stages → high-level milestones
+
+Tasks → work to be done in each stage
+
+Subtasks → step-by-step actions
+
+Git commit checkpoints → when to push to Git
+
+Here’s a perfectly ordered roadmap for building your QR-based restaurant ordering system.
+
+📅 Project Development Plan
+Stage 1 — Admin Web App (Base Structure & Authentication)
+🎯 Goal: Set up the admin app so restaurants can log in, register, and land on a dashboard.
+
+Task 1: Project Setup
+Subtasks:
+
+Create project folder & initialize Git repository
+
+csharp
+Copy
+Edit
+git init
+Set up React project (Vite or CRA) → admin-app
+
+Install dependencies:
+
+react-router-dom
+
+axios
+
+UI library (e.g., Material UI / Tailwind CSS)
+
+Setup file structure:
+
+css
+Copy
+Edit
+src/
+  components/
+  pages/
+  services/
+  styles/
+  utils/
+Git Commit: "Initial project setup with folder structure"
+
+Task 2: UI for Auth
+Subtasks:
+
+Create Sign Up page (form fields: name, email, password, confirm password)
+
+Create Login page (email, password)
+
+Add routing between pages
+
+Apply basic validation (frontend only)
+
+Git Commit: "Add Sign Up and Login UI with basic validation"
+
+Task 3: Backend Setup (Auth API)
+Subtasks:
+
+Create backend folder → backend
+
+Install:
+
+nginx
+Copy
+Edit
+npm install express mongoose bcrypt jsonwebtoken cors dotenv
+Setup server.js with Express & MongoDB connection
+
+Create models/User.js
+
+Create routes/auth.js (register, login)
+
+Implement JWT authentication
+
+Test with Postman
+
+Git Commit: "Add backend authentication with JWT"
+
+Task 4: Connect Admin UI to Backend
+Subtasks:
+
+Create services/authService.js in frontend
+
+Integrate Sign Up → /auth/register API
+
+Integrate Login → /auth/login API
+
+Store token in localStorage
+
+Redirect to home/dashboard after login
+
+Git Commit: "Integrate frontend auth with backend API"
+
+Task 5: Dashboard (Home Page)
+Subtasks:
+
+Create /dashboard route
+
+Add placeholder sections: "Menu", "Orders", "Settings"
+
+Display restaurant name from DB
+
+Protect route — redirect to /login if no token
+
+Git Commit: "Add protected dashboard route"
+
+Stage 2 — Admin Menu Management
+🎯 Goal: Let admins add, update, delete menu items.
+
+Task 1: Backend — Menu API
+Subtasks:
+
+Create models/MenuItem.js
+
+Create routes/menu.js (CRUD)
+
+Protect routes with admin JWT middleware
+
+Git Commit: "Add menu CRUD API"
+
+Task 2: Frontend — Menu UI
+Subtasks:
+
+Create pages/MenuManagement.js
+
+Add Add Item form
+
+Show list of menu items from backend
+
+Implement Edit/Delete buttons
+
+Git Commit: "Add Menu Management UI & API integration"
+
+Stage 3 — Customer Web App
+🎯 Goal: Let customers scan QR, see menu, and order.
+
+Task 1: Project Setup
+Subtasks:
+
+Create new folder → customer-app
+
+Setup React + Tailwind
+
+Create pages: Home, Menu, Cart, Order Summary
+
+Git Commit: "Initialize customer app"
+
+Task 2: QR Handling
+Subtasks:
+
+Generate QR code for each table with unique URL
+
+Read table number from URL params
+
+Git Commit: "Add QR scan handling"
+
+Task 3: OTP Authentication
+Subtasks:
+
+Create models/Customer.js in backend
+
+Add /auth/otp API
+
+Integrate with SMS API (Twilio / MSG91)
+
+Frontend: OTP input & verification
+
+Git Commit: "Add OTP auth for customers"
+
+Stage 4 — Ordering & Billing
+🎯 Goal: Customers can place orders & restaurants can see them.
+
+Task 1: Backend — Orders API
+Subtasks:
+
+Create models/Order.js
+
+Add routes for create, update, list
+
+Link orders to customer & table
+
+Git Commit: "Add Orders API"
+
+Task 2: Customer — Place Order
+Subtasks:
+
+Cart page → confirm order
+
+Send order to backend
+
+Show order status
+
+Git Commit: "Customer place order integration"
+
+Task 3: Admin — View Orders
+Subtasks:
+
+Dashboard → Orders section
+
+Show live order list (polling or WebSockets)
+
+Change order status (preparing, ready, served)
+
+Git Commit: "Add order management in admin"
+
+Stage 5 — Extras (Future)
+Loyalty points
+
+Payment gateway
+
+Multi-restaurant support
+
+Analytics dashboard
