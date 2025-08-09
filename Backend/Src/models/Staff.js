@@ -2,15 +2,22 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const StaffSchema = new Schema({
-  name: String,
-  email: { type: String, index: true, unique: true },
+  staffName: {
+    type: String,
+    required: true,
+  },
+  staffemail: { type: String, index: true, unique: true },
   passwordHash: String,
-  role: {
+  staffrole: {
     type: String,
     enum: ["owner", "manager", "chef", "cashier"],
     default: "manager",
   },
-  restaurant: { type: Schema.Types.ObjectId, ref: "Restaurant" },
+  staffId: {
+    type: String,
+    required: true,
+  },
+  staffbranch: { type: Schema.Types.ObjectId, ref: "branch" },
   createdAt: { type: Date, default: Date.now },
 });
 export default mongoose.model("Staff", StaffSchema);

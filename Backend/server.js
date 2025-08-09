@@ -1,25 +1,15 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { json } from "express";
 import connectDB from "./Src/Config/db.js";
-import userRoutes from "./Src/routes/userRoutes.js";
+import authRouter from "./Src/routes/StaffRouter.js";
 
-dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 3000;
-//PORT 3000 is set in Default
+dotenv.config();
 app.use(cors());
-app.use(express.json());
-
-await connectDB().then(() => {
-  try {
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
-  } catch (error) {
-    console.log("Unable to start server:", error);
-  }
-});
+app.use(json());
+const PORT = process.env.PORT || 3000;
 
 app.get("/", (_, res) => {
   try {
@@ -28,5 +18,15 @@ app.get("/", (_, res) => {
     res.status(500).send("Server Error", error);
   }
 });
+app.use("/staff-login", authRouter);
 
-app.use("/home", userRoutes);
+connectDB()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.error("Database connection failed:", error);
+    process.exit(1);
+  });
