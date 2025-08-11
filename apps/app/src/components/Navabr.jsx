@@ -177,7 +177,7 @@ function Navbar() {
                 <a>Settings</a>
               </li>
               <li>
-                <a>Logout</a>
+                <a href="/login">Logout</a>
               </li>
             </ul>
           </div>
@@ -210,30 +210,88 @@ function Navbar() {
           </li>
           <li>
             <a
-              href="/settings"
+              href="/customers"
               className="block p-2 rounded-lg hover:bg-gray-100"
               onClick={() => setSidebarOpen(false)}
             >
-              Settings
+              Customers
             </a>
           </li>
           <li>
             <a
-              href="/messages"
+              href="/orders"
               className="block p-2 rounded-lg hover:bg-gray-100"
               onClick={() => setSidebarOpen(false)}
             >
-              Messages
+              Orders
             </a>
           </li>
           <li>
             <a
-              href="/"
+              href="/menus"
               className="block p-2 rounded-lg hover:bg-gray-100"
               onClick={() => setSidebarOpen(false)}
             >
-              Logout
+              Menus
             </a>
+          </li>
+          <li>
+            <a
+              href="/sales"
+              className="block p-2 rounded-lg hover:bg-gray-100"
+              onClick={() => setSidebarOpen(false)}
+            >
+              Sales
+            </a>
+          </li>
+          <li>
+            <a
+              href="/staff"
+              className="block p-2 rounded-lg hover:bg-gray-100"
+              onClick={() => setSidebarOpen(false)}
+            >
+              Staff
+            </a>
+          </li>
+          <li>
+            <a
+              href="/staff"
+              className="block p-2 rounded-lg hover:bg-gray-100"
+              onClick={() => setSidebarOpen(false)}
+            >
+              Staff
+            </a>
+          </li>
+          <li>
+            <a
+              href="/staff"
+              className="block p-2 rounded-lg hover:bg-gray-100"
+              onClick={() => setSidebarOpen(false)}
+            >
+              Staff
+            </a>
+          </li>
+          <li>
+            <a
+              href="/staff"
+              className="block p-2 rounded-lg hover:bg-gray-100"
+              onClick={() => setSidebarOpen(false)}
+            >
+              Staff
+            </a>
+          </li>
+          <li>
+            <figure>
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                alt="logo"
+              />
+            </figure>
+            <div className="card-body">
+              <p>
+                All Rights Reserved<sup>©</sup>
+              </p>
+            </div>
           </li>
         </ul>
       </aside>

@@ -31,7 +31,7 @@ function Sign() {
             onSubmit={(e) => {
               e.preventDefault();
               toast.success("Form submitted successfully!");
-              navigate("/Login");
+              navigate("/auth");
             }}
           >
             {/* UserId */}
@@ -86,7 +86,7 @@ function Sign() {
           {/* Registration */}
           <p className="text-center mt-6 text-sm text-gray-700">
             Already have an account?{" "}
-            <a href="/" className="text-blue-600 hover:underline">
+            <a href="/login" className="text-blue-600 hover:underline">
               Login Here
             </a>
           </p>
