@@ -15,16 +15,31 @@ const Navbar = () => {
             onClick={() => setSidebarOpen(!sidebarOpen)}
             className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
           >
-            <FiMoreVertical size={22} />
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+                d="M5 7h14M5 12h14M5 17h14"
+              />
+            </svg>
           </button>
-          <a href="/" className="flex items-center">
+          <a href="/Dashboard" className="flex items-center">
             <img
-              src="https://flowbite.s3.amazonaws.com/logo.svg"
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/5/51/Sunrisers_Hyderabad_Logo.svg/1200px-Sunrisers_Hyderabad_Logo.svg.png"
               className="mr-3 h-8"
               alt="Logo"
             />
             <span className="text-xl font-semibold dark:text-white">
-              My App
+              RESTRO
             </span>
           </a>
         </div>
@@ -55,7 +70,7 @@ const Navbar = () => {
           <ul className="p-4 space-y-2">
             <li>
               <a
-                href="/overview"
+                href="/demo"
                 className="block p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 Overview
