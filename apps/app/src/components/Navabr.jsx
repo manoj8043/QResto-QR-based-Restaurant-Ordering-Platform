@@ -174,7 +174,7 @@ function Navbar() {
                 </a>
               </li>
               <li>
-                <a>Settings</a>
+                <a href="/settings">Settings</a>
               </li>
               <li>
                 <a href="/login">Logout</a>
@@ -228,7 +228,7 @@ function Navbar() {
           </li>
           <li>
             <a
-              href="/menus"
+              href="/menu"
               className="block p-2 rounded-lg hover:bg-gray-100"
               onClick={() => setSidebarOpen(false)}
             >
