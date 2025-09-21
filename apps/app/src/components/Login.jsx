@@ -1,9 +1,18 @@
-import React from "react";
 import toast from "react-hot-toast";
 import bg from "../assets/Web_bg10.webp";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function Login() {
+  const [staffData, setStaffData] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:5000/staff-login/staff").then((res) => {
+      setStaffData(res.data);
+    });
+  }, []);
+  console.log(staffData);
+
   const navigate = useNavigate();
 
   return (
@@ -39,6 +48,17 @@ function Login() {
               type="text"
               placeholder="UserId"
               className="input input-bordered w-full"
+              // onBlur={(e) => {
+              //   const userId = e.target.value;
+              //   const user = staffData.find(
+              //     (staff) => staff.staffId === userId
+              //   );
+              //   if (user) {
+              //     toast.success(`Welcome back, ${user.staffName}!`);
+              //   } else {
+              //     toast.error("User not found. Please check your UserId.");
+              //   }
+              // }}
             />
 
             {/* Password */}

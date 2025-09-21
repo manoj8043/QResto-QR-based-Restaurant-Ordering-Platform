@@ -11,7 +11,7 @@ export const getAllStaff = async (_, res) => {
     }
   } catch (error) {
     console.error("Error fetching staff:", error);
-    res.status(500).json({ message: "Interna    l server error" });
+    res.status(500).json({ message: "Internal server error" });
   }
 };
 
@@ -31,7 +31,13 @@ export const getStafffById = async (req, res) => {
 export const setStaff = async (req, res) => {
   try {
     const { staffName, staffemail, staffrole, staffbranch, staffId } = req.body;
-    const staff = new Staff(req.body);
+    const staff = new Staff({
+      staffName,
+      staffemail,
+      staffrole,
+      staffbranch,
+      staffId,
+    });
     const savedStaff = await staff.save();
     res.status(201).json(savedStaff);
     console.log("Staff created successfully");

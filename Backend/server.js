@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { json } from "express";
 import connectDB from "./Src/Config/db.js";
-import authRouter from "./Src/routes/StaffRouter.js";
+import staffRouter from "./Src/routes/StaffRouter.js";
 
 const app = express();
 dotenv.config();
@@ -18,7 +18,7 @@ app.get("/", (_, res) => {
     res.status(500).send("Server Error", error);
   }
 });
-app.use("/staff-login", authRouter);
+app.use("/staff-login", staffRouter);
 
 connectDB()
   .then(() => {
