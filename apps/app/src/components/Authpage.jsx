@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import bg from "../assets/Web_bg10.webp";
+import bg from "../assets/imgs/bg2.png";
 import { useNavigate } from "react-router";
 
 function AuthPage() {
