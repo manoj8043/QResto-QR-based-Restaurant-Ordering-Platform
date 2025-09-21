@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import bg from "../assets/Web_bg10.webp";
+import bg from "../assets/imgs/bg2.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";

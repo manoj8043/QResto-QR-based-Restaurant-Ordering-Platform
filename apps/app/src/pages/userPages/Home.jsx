@@ -1,27 +1,23 @@
+import React, { useEffect } from "react";
 import Nav from "./Navbar";
 import Hero from "./Hero";
 import Menu from "./Menu";
 import About from "./About";
 import Support from "./Support";
 import Footer from "./Footer";
-import { useEffect } from "react";
 
 function Home() {
   useEffect(() => {
-    console.log("Home component mounted");
+    console.log("Spice Palace Home component mounted");
   }, []);
+
   return (
-    <div className="app-container">
+    <div className="min-h-screen bg-base-100">
       <Nav />
-      <br />
       <Hero />
-      <br />
       <Menu />
-      <br />
       <About />
-      <br />
       <Support />
-      <hr />
       <Footer />
     </div>
   );

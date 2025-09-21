@@ -16,7 +16,7 @@ function Menu() {
         <div className="w-[19%] h-[350px] rounded-md shadow bg-blue-400 mb-5">
           2
         </div>
-        <div className="w-[19%] h-[350px] rounded-md shadow bg-blue-300 mb-5">
+        <div className="w-[19%]apps\app\src\assets\imgs\Logo.png h-[350px] rounded-md shadow bg-blue-300 mb-5">
           3
         </div>
         <div className="w-[19%] h-[350px] rounded-md shadow bg-blue-400 mb-5">

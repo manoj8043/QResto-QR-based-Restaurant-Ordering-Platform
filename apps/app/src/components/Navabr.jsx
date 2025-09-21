@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import logo from "../assets/imgs/Logo.png";
 
 function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -14,8 +15,8 @@ function Navbar() {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  const violet = "bg-violet-600";
-  const violetHover = "hover:bg-violet-700";
+  const primary = "bg-primary";
+  const primaryHover = "hover:bg-primary/90";
   const lightGray = "bg-base-100";
 
   return (
@@ -26,7 +27,7 @@ function Navbar() {
         <div className="navbar-start flex items-center gap-3">
           <button
             onClick={() => setSidebarOpen(true)}
-            className={`p-2 rounded-lg ${violet} ${violetHover} text-white`}
+            className={`p-2 rounded-lg ${primary} ${primaryHover} text-white`}
           >
             <svg
               className="w-6 h-6"
@@ -39,10 +40,15 @@ function Navbar() {
             </svg>
           </button>
           <a
-            className="btn btn-ghost normal-case text-xl text-violet-700 "
+            className="btn btn-ghost normal-case text-xl text-primary"
             href="/dashboard"
           >
-            QResto
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                <span className="text-white font-bold text-sm">🍛</span>
+              </div>
+              <span className="font-elegant font-bold">Spice Palace</span>
+            </div>
           </a>
         </div>
 
@@ -50,7 +56,7 @@ function Navbar() {
         <div className="navbar-center lg:hidden ml-auto">
           <button
             onClick={() => setNavCollapseOpen(!navCollapseOpen)}
-            className={`p-2 rounded-lg ${violet} ${violetHover} text-white`}
+            className={`p-2 rounded-lg ${primary} ${primaryHover} text-white`}
           >
             <svg
               className="w-6 h-6"
@@ -201,8 +207,8 @@ function Navbar() {
         <ul className="p-4 space-y-2">
           <li>
             <a
-              href="/demo"
-              className={`${violet} text-white block p-2 rounded-lg ${violetHover}`}
+              href="/"
+              className={`${primary} text-white block p-2 rounded-lg ${primaryHover}`}
               onClick={() => setSidebarOpen(false)}
             >
               Overview
@@ -211,85 +217,83 @@ function Navbar() {
           <li>
             <a
               href="/customers"
-              className="block p-2 rounded-lg hover:bg-gray-100"
+              className="block p-2 rounded-lg hover:bg-base-200 transition-colors"
               onClick={() => setSidebarOpen(false)}
             >
-              Customers
+              <div className="flex items-center space-x-3">
+                <span className="text-lg">👥</span>
+                <span>Customers</span>
+              </div>
             </a>
           </li>
           <li>
             <a
               href="/orders"
-              className="block p-2 rounded-lg hover:bg-gray-100"
+              className="block p-2 rounded-lg hover:bg-base-200 transition-colors"
               onClick={() => setSidebarOpen(false)}
             >
-              Orders
+              <div className="flex items-center space-x-3">
+                <span className="text-lg">📦</span>
+                <span>Orders</span>
+              </div>
             </a>
           </li>
           <li>
             <a
-              href="/menu"
-              className="block p-2 rounded-lg hover:bg-gray-100"
+              href="/menu-management"
+              className="block p-2 rounded-lg hover:bg-base-200 transition-colors"
               onClick={() => setSidebarOpen(false)}
             >
-              Menus
+              <div className="flex items-center space-x-3">
+                <span className="text-lg">🍽️</span>
+                <span>Menu Management</span>
+              </div>
             </a>
           </li>
           <li>
             <a
               href="/sales"
-              className="block p-2 rounded-lg hover:bg-gray-100"
+              className="block p-2 rounded-lg hover:bg-base-200 transition-colors"
               onClick={() => setSidebarOpen(false)}
             >
-              Sales
+              <div className="flex items-center space-x-3">
+                <span className="text-lg">📊</span>
+                <span>Sales & Analytics</span>
+              </div>
             </a>
           </li>
           <li>
             <a
               href="/staff"
-              className="block p-2 rounded-lg hover:bg-gray-100"
+              className="block p-2 rounded-lg hover:bg-base-200 transition-colors"
               onClick={() => setSidebarOpen(false)}
             >
-              Staff
+              <div className="flex items-center space-x-3">
+                <span className="text-lg">👨‍🍳</span>
+                <span>Staff Management</span>
+              </div>
             </a>
           </li>
           <li>
             <a
-              href="/staff"
-              className="block p-2 rounded-lg hover:bg-gray-100"
+              href="/settings"
+              className="block p-2 rounded-lg hover:bg-base-200 transition-colors"
               onClick={() => setSidebarOpen(false)}
             >
-              Staff
+              <div className="flex items-center space-x-3">
+                <span className="text-lg">⚙️</span>
+                <span>Settings</span>
+              </div>
             </a>
           </li>
-          <li>
-            <a
-              href="/staff"
-              className="block p-2 rounded-lg hover:bg-gray-100"
-              onClick={() => setSidebarOpen(false)}
-            >
-              Staff
-            </a>
-          </li>
-          <li>
-            <a
-              href="/staff"
-              className="block p-2 rounded-lg hover:bg-gray-100"
-              onClick={() => setSidebarOpen(false)}
-            >
-              Staff
-            </a>
-          </li>
-          <li>
-            <figure>
-              <img
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="logo"
-              />
-            </figure>
-            <div className="card-body">
-              <p>
-                All Rights Reserved<sup>©</sup>
+          <li className="mt-8 pt-4 border-t border-base-300">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-3">
+                <img src={logo} alt="logo" />
+              </div>
+              <p className="text-sm text-base-content/70 font-elegant">Spice Palace</p>
+              <p className="text-xs text-base-content/50 mt-1">
+                All Rights Reserved © 2025
               </p>
             </div>
           </li>
@@ -342,7 +346,7 @@ export default Navbar;
 //               alt="Logo"
 //             />
 //             <span className="text-xl font-semibold dark:text-white">
-//               RESTRO
+//               SPICE PALACE
 //             </span>
 //           </a>
 //         </div>

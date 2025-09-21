@@ -1,10 +1,10 @@
 import React from "react";
-import Home from "../pages/signInPage/Home";
+import Home from "../pages/Userpages/Home";
 
 function PageDemo() {
   return (
     <div>
-      <Home></Home>
+      <Home/>
     </div>
   );
 }
