@@ -4,7 +4,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Sign from "./components/Sign";
-import Profilepage from "./components/ProfilePage";
+import Profilepage from "./components/Profilepage";
 import Authpage from "./components/Authpage";
 import Menu from "./components/Menu";
 import Customers from "./components/Customers";
