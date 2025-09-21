@@ -1,7 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import PageDemo from "./components/PageDemo";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Sign from "./components/Sign";
@@ -14,6 +13,7 @@ import Orders from "./components/Orders";
 import MenuManagement from "./components/MenuManagement";
 import Sales from "./components/Sales";
 import StaffManagement from "./components/StaffManagement";
+import Home from "./pages/userPages/Home";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/" element={<PageDemo />} />
+          <Route path="/" element={<Home />} />
           <Route path="/signin" element={<Sign />} />
           <Route path="/profile" element={<Profilepage />} />
           <Route path="/auth" element={<Authpage />} />
