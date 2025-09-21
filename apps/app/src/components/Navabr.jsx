@@ -45,7 +45,7 @@ function Navbar() {
           >
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-sm">🍛</span>
+                <img src={logo} alt="logo" />
               </div>
               <span className="font-elegant font-bold">Spice Palace</span>
             </div>

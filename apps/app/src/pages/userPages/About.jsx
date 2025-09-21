@@ -1,5 +1,5 @@
 import React from "react";
-
+import logo from "../../assets/imgs/Logo.png";
 const About = () => {
   const features = [
     {
@@ -76,7 +76,7 @@ const About = () => {
               <div className="card-body p-8">
                 <div className="text-center">
                   <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-4xl">🍛</span>
+                    <img src={logo} alt="logo" />
                   </div>
                   <h4 className="text-2xl font-elegant font-bold text-primary mb-4">
                     Our Mission

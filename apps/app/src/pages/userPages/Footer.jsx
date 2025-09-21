@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/imgs/Logo.png";
 
 const Footer = () => {
   const quickLinks = [
@@ -42,7 +43,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg">🍛</span>
+                <img src={logo} alt="logo" />
               </div>
               <div>
                 <h3 className="font-elegant text-2xl font-bold text-primary">Spice Palace</h3>
@@ -144,7 +145,7 @@ const Footer = () => {
         {/* Decorative Divider */}
         <div className="flex items-center justify-center mb-6">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
-          <div className="mx-4 text-2xl">🍛</div>
+          <img src={logo} alt="logo" className="w-20 h-20" />
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
         </div>
 
