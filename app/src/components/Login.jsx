@@ -1,18 +1,21 @@
 import toast from "react-hot-toast";
 import bg from "../assets/imgs/bg2.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Login() {
+  const demoUserId = useRef();
+  const demoPassword = useRef();
+
   const [staffData, setStaffData] = useState([]);
   useEffect(() => {
+    alert("Use demo credentials to login:\nUserId: admin\nPassword: admin123");
     axios.get("http://localhost:5000/staff-login/staff").then((res) => {
       setStaffData(res.data);
     });
   }, []);
   console.log(staffData);
-
   const navigate = useNavigate();
 
   return (
@@ -39,8 +42,16 @@ function Login() {
             className="flex flex-col gap-5"
             onSubmit={(e) => {
               e.preventDefault();
-              toast.success("Logged in successfully!");
-              navigate("/dashboard");
+
+              const userId = demoUserId.current.value;
+              const password = demoPassword.current.value;
+
+              if (userId === "admin" || password === "admin123") {
+                navigate("/dashboard");
+                toast.success("Logged in successfully!");
+              } else {
+                toast.error("Invalid UserId or Password");
+              }
             }}
           >
             {/* UserId */}
@@ -48,17 +59,7 @@ function Login() {
               type="text"
               placeholder="UserId"
               className="input input-bordered w-full"
-              // onBlur={(e) => {
-              //   const userId = e.target.value;
-              //   const user = staffData.find(
-              //     (staff) => staff.staffId === userId
-              //   );
-              //   if (user) {
-              //     toast.success(`Welcome back, ${user.staffName}!`);
-              //   } else {
-              //     toast.error("User not found. Please check your UserId.");
-              //   }
-              // }}
+              ref={demoUserId}
             />
 
             {/* Password */}
@@ -67,16 +68,17 @@ function Login() {
               //   required
               placeholder="Password"
               className="input input-bordered w-full"
+              ref={demoPassword}
             />
 
             {/* Forgot Password */}
             <div className="text-right">
-              <a
-                href="/forgot-password"
+              <Link
+                to="/forgot-password"
                 className="text-sm text-blue-600 hover:underline"
               >
                 Forgot password?
-              </a>
+              </Link>
             </div>
 
             {/* Terms */}
@@ -87,9 +89,9 @@ function Login() {
                 className="checkbox checkbox-sm"
               />
               I agree to the{" "}
-              <a href="/terms" className="text-blue-600 hover:underline">
+              <Link to="/terms" className="text-blue-600 hover:underline">
                 Terms & Conditions
-              </a>
+              </Link>
             </label>
 
             {/* Submit */}
@@ -101,9 +103,9 @@ function Login() {
           {/* Registration */}
           <p className="text-center mt-6 text-sm text-gray-700">
             Don’t have an account?{" "}
-            <a href="/signin" className="text-blue-600 hover:underline">
+            <Link to="/signin" className="text-blue-600 hover:underline">
               Register Here
-            </a>
+            </Link>
           </p>
         </div>
       </div>
