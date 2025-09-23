@@ -14,11 +14,21 @@ function Home() {
   return (
     <div className="min-h-screen bg-base-100">
       <Nav />
-      <Hero />
-      <Menu />
-      <About />
-      <Support />
-      <Footer />
+      <section id="hero">
+        <Hero />
+      </section>
+      <section id="menu">
+        <Menu />
+      </section>
+      <section id="userPageAbout">
+        <About />
+      </section>
+      <section id="userPageSupport">
+        <Support />
+      </section>
+      <section id="footer">
+        <Footer />
+      </section>
     </div>
   );
 }

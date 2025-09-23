@@ -7,7 +7,6 @@ import img3 from "../../assets/imgs/img3.jpg";
 import img4 from "../../assets/imgs/img4.jpg";
 import img5 from "../../assets/imgs/img5.jpg";
 import img6 from "../../assets/imgs/img6.jpg";
-import Menu from "./Menu";
 
 const Hero = () => {
   const features = [
@@ -68,8 +67,8 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link
-              to={Menu}
+            <a
+              href="#menu"
               className="btn btn-primary btn-lg font-elegant text-lg px-8"
             >
               <svg
@@ -86,9 +85,9 @@ const Hero = () => {
                 ></path>
               </svg>
               Explore Menu
-            </Link>
-            <Link
-              to="/about"
+            </a>
+            <a
+              href="#about"
               className="btn btn-outline btn-lg font-elegant text-lg px-8"
             >
               <svg
@@ -105,7 +104,7 @@ const Hero = () => {
                 ></path>
               </svg>
               Our Story
-            </Link>
+            </a>
           </div>
 
           {/* Features Grid */}

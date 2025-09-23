@@ -9,7 +9,6 @@ const Login = lazy(() => import("./components/Login"));
 const Sign = lazy(() => import("./components/Sign"));
 const Profilepage = lazy(() => import("./components/Profilepage"));
 const Authpage = lazy(() => import("./components/Authpage"));
-const Menu = lazy(() => import("./components/Menu"));
 const Customers = lazy(() => import("./components/Customers"));
 const Settings = lazy(() => import("./components/Settings"));
 const Orders = lazy(() => import("./components/Orders"));
@@ -31,13 +30,16 @@ function App() {
             <Route path="/signin" element={<Sign />} />
             <Route path="/profile" element={<Profilepage />} />
             <Route path="/auth" element={<Authpage />} />
-            <Route path="/menu" element={<Menu />} />
             <Route path="/customers" element={<Customers />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/menu-management" element={<MenuManagement />} />
             <Route path="/sales" element={<Sales />} />
             <Route path="/staff" element={<StaffManagement />} />
+            <Route
+              path="*"
+              element={<div className="p-10 text-center">404 Not Found</div>}
+            />
           </Routes>
         </Suspense>
       </div>
