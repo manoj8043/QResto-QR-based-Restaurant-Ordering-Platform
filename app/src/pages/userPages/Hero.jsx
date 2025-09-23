@@ -87,7 +87,7 @@ const Hero = () => {
               Explore Menu
             </a>
             <a
-              href="#about"
+              href="#userPageSupport"
               className="btn btn-outline btn-lg font-elegant text-lg px-8"
             >
               <svg
