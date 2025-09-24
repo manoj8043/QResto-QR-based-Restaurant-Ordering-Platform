@@ -1,9 +1,9 @@
 import React from "react";
 import toast from "react-hot-toast";
-import bg from "../assets/imgs/bg2.png";
+import bg from "../../assets/imgs/bg2.png";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import InputTextErrorMsgs from "../subComponents/InputTextErrorMsgs";
+import InputTextErrorMsgs from "../../components/InputTextErrorMsgs";
 
 const initialValues = {
   staffId: "",

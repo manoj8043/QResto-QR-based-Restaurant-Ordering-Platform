@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/imgs/Logo.png";
+import logo from "../../assets/imgs/Logo.png";
 import { Link } from "react-router";
 
 function Navbar() {
@@ -184,7 +184,14 @@ function Navbar() {
                 <Link to="/settings">Settings</Link>
               </li>
               <li>
-                <Link to="/login">Logout</Link>
+                <Link
+                  to="/"
+                  onClick={() => {
+                    sessionStorage.clear();
+                  }}
+                >
+                  Logout
+                </Link>
               </li>
             </ul>
           </div>

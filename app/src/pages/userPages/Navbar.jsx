@@ -52,7 +52,7 @@ function Navbar() {
         </div>
 
         {/* Logo */}
-        <Link to="/" className="btn btn-ghost text-xl">
+        <Link to="/home" className="btn btn-ghost text-xl">
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
               <img src={logo} alt="logo" />

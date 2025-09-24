@@ -4,7 +4,7 @@ import logo from "../../assets/imgs/Logo.png";
 
 const Footer = () => {
   const quickLinks = [
-    { name: "Home", path: "/" },
+    { name: "Home", path: "/home" },
     { name: "Menu", path: "/menu" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
@@ -13,25 +13,25 @@ const Footer = () => {
 
   const menuCategories = [
     "Starters & Appetizers",
-    "Royal Biryanis", 
+    "Royal Biryanis",
     "Curries & Gravies",
     "Breads & Rotis",
     "Fresh Beverages",
-    "Chinese Delights"
+    "Chinese Delights",
   ];
 
   const contactInfo = [
     { icon: "📍", text: "123 Spice Street, Mumbai, Maharashtra 400001" },
     { icon: "📞", text: "+91 98765 43210" },
     { icon: "✉️", text: "info@spicepalace.com" },
-    { icon: "🕒", text: "Mon-Sun: 11:00 AM - 11:00 PM" }
+    { icon: "🕒", text: "Mon-Sun: 11:00 AM - 11:00 PM" },
   ];
 
   const socialLinks = [
     { name: "Facebook", icon: "📘", url: "#" },
     { name: "Instagram", icon: "📷", url: "#" },
     { name: "Twitter", icon: "🐦", url: "#" },
-    { name: "YouTube", icon: "📺", url: "#" }
+    { name: "YouTube", icon: "📺", url: "#" },
   ];
 
   return (
@@ -46,14 +46,18 @@ const Footer = () => {
                 <img src={logo} alt="logo" />
               </div>
               <div>
-                <h3 className="font-elegant text-2xl font-bold text-primary">Spice Palace</h3>
-                <p className="text-xs text-base-content/70 font-telugu">రుచికరమైన ఆహారం</p>
+                <h3 className="font-elegant text-2xl font-bold text-primary">
+                  Spice Palace
+                </h3>
+                <p className="text-xs text-base-content/70 font-telugu">
+                  రుచికరమైన ఆహారం
+                </p>
               </div>
             </div>
             <p className="text-sm text-base-content/80 leading-relaxed">
-              Experience the authentic flavors of India at Spice Palace. 
-              We bring you traditional recipes with modern presentation, 
-              creating unforgettable dining experiences.
+              Experience the authentic flavors of India at Spice Palace. We
+              bring you traditional recipes with modern presentation, creating
+              unforgettable dining experiences.
             </p>
             <div className="flex space-x-2">
               {socialLinks.map((social, index) => (
@@ -71,12 +75,14 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-elegant text-lg font-bold text-primary mb-4">Quick Links</h4>
+            <h4 className="font-elegant text-lg font-bold text-primary mb-4">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <Link 
-                    to={link.path} 
+                  <Link
+                    to={link.path}
                     className="link link-hover text-sm text-base-content/80 hover:text-primary transition-colors"
                   >
                     {link.name}
@@ -88,12 +94,14 @@ const Footer = () => {
 
           {/* Menu Categories */}
           <div>
-            <h4 className="font-elegant text-lg font-bold text-primary mb-4">Our Menu</h4>
+            <h4 className="font-elegant text-lg font-bold text-primary mb-4">
+              Our Menu
+            </h4>
             <ul className="space-y-2">
               {menuCategories.map((category, index) => (
                 <li key={index}>
-                  <a 
-                    href="#menu" 
+                  <a
+                    href="#menu"
                     className="link link-hover text-sm text-base-content/80 hover:text-primary transition-colors"
                   >
                     {category}
@@ -105,12 +113,16 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-elegant text-lg font-bold text-primary mb-4">Contact Us</h4>
+            <h4 className="font-elegant text-lg font-bold text-primary mb-4">
+              Contact Us
+            </h4>
             <ul className="space-y-3">
               {contactInfo.map((info, index) => (
                 <li key={index} className="flex items-start space-x-2">
                   <span className="text-primary mt-0.5">{info.icon}</span>
-                  <span className="text-sm text-base-content/80">{info.text}</span>
+                  <span className="text-sm text-base-content/80">
+                    {info.text}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -133,8 +145,18 @@ const Footer = () => {
                 className="input input-bordered flex-1"
               />
               <button className="btn btn-primary">
-                <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                <svg
+                  className="w-4 h-4 mr-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                  ></path>
                 </svg>
                 Subscribe
               </button>
@@ -159,15 +181,24 @@ const Footer = () => {
               Made with ❤️ in India
             </p>
           </div>
-          
+
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="link link-hover text-base-content/80 hover:text-primary">
+            <a
+              href="#"
+              className="link link-hover text-base-content/80 hover:text-primary"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="link link-hover text-base-content/80 hover:text-primary">
+            <a
+              href="#"
+              className="link link-hover text-base-content/80 hover:text-primary"
+            >
               Terms of Service
             </a>
-            <a href="#" className="link link-hover text-base-content/80 hover:text-primary">
+            <a
+              href="#"
+              className="link link-hover text-base-content/80 hover:text-primary"
+            >
               Refund Policy
             </a>
           </div>

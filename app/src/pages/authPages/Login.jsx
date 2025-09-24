@@ -1,23 +1,54 @@
 import toast from "react-hot-toast";
-import bg from "../assets/imgs/bg2.png";
+import bg from "../../assets/imgs/bg2.png";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 
 function Login() {
-  const demoUserId = useRef();
-  const demoPassword = useRef();
+  // const demoUserId = useRef();
+  // const demoPassword = useRef();
 
   const [staffData, setStaffData] = useState([]);
   useEffect(() => {
-    alert("Use demo credentials to login:\nUserId: admin\nPassword: admin123");
     axios.get("http://localhost:5000/staff-login/staff").then((res) => {
       setStaffData(res.data);
     });
+
+    if (sessionStorage.getItem("isLoggedIn") === "true") {
+      navigate("/dashboard");
+      toast.success("You are already logged in!");
+    } else {
+      alert(
+        "Use demo credentials to login:\nUserId: admin\nPassword: admin123"
+      );
+    }
   }, []);
   console.log(staffData);
   const navigate = useNavigate();
 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // ⚡ Directly save user input in sessionStorage
+    sessionStorage.setItem("username", username);
+    sessionStorage.setItem("password", password); // not secure, just demo
+    sessionStorage.setItem("isLoggedIn", "true");
+    if (
+      (username === "admin" && password === "admin123") ||
+      (username === "staff" && password === "staff123")
+    ) {
+      toast.success("Login successful!");
+      navigate("/dashboard");
+    } else {
+      toast.error("Invalid credentials. Please try again.");
+      sessionStorage.clear();
+    }
+  };
   return (
     <div className="flex h-screen w-full">
       {/* Left: Background Image */}
@@ -41,17 +72,7 @@ function Login() {
           <form
             className="flex flex-col gap-5"
             onSubmit={(e) => {
-              e.preventDefault();
-
-              const userId = demoUserId.current.value;
-              const password = demoPassword.current.value;
-
-              if (userId === "admin" || password === "admin123") {
-                navigate("/dashboard");
-                toast.success("Logged in successfully!");
-              } else {
-                toast.error("Invalid UserId or Password");
-              }
+              handleLogin(e);
             }}
           >
             {/* UserId */}
@@ -59,17 +80,28 @@ function Login() {
               type="text"
               placeholder="UserId"
               className="input input-bordered w-full"
-              ref={demoUserId}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
 
             {/* Password */}
-            <input
-              type="password"
-              //   required
-              placeholder="Password"
-              className="input input-bordered w-full"
-              ref={demoPassword}
-            />
+            <div className="relative w-full">
+              <input
+                type={showPassword ? "text" : "password"} // toggle type
+                placeholder="Password"
+                className="input input-bordered w-full pr-10" // padding for icon
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+
+              {/* Icon button */}
+              <span
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </span>
+            </div>
 
             {/* Forgot Password */}
             <div className="text-right">
